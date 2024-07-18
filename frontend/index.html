@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Lists</title>
+  </head>
+  <body>
+    <h1>Shopping Lists</h1>
+
+    <!--Add List elements-->
+    <form action="http://localhost:5000/index.php/add-list" method="POST">
+      <label for="name">New List Name:</label>
+      <input type="text" id="name" name="name">
+      <label for="desc">Desc:</label>
+      <input type="text" id="desc" name="desc">
+      <input type="submit" value="Create">
+    </form> 
+    <br>
+
+    <!--Delete List elements-->
+    <form action="http://localhost:5000/index.php/delete-list" method="POST">
+      <label for="delete_list">Delete List:</label>
+      <select name="delete_list" id="delete_list"></select>
+      <input type="submit" value="Delete">
+    </form>
+    <br>
+
+    <!--Add Item elements-->
+    <form action="http://localhost:5000/index.php/add-item" method="POST">
+      <label for="add_item">Add item to:</label>
+      <select name="add_item" id="add_item"></select>
+
+      <label for="item_name">Name:</label>
+      <input type="item_name" id="item_name" name="item_name">
+      <label for="item_quantity">Quantity:</label>
+      <input type="item_quantity" id="item_quantity" name="item_quantity">
+      <input type="submit" value="Add">
+    </form> 
+    <br>
+
+    <!--Div to hold lists (populated dynamically via script referenced below)-->
+    <div id="lists"></div>
+
+    <script src="./index.js"></script>
+
+  </body>
+</html>
